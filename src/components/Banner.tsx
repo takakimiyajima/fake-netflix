@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from "react";
-import axios from "./../axios";
+import React, { useState, useEffect } from "react"
+import axios from "./../axios"
 import "./Banner.scss"
 import { ENDPOINTS } from './../constants'
 
 type movieProps = {
-  title?: string;
-  name?: string;
-  orignal_name?: string;
-  backdrop_path?: string;
-  overview?: string;
-};
+  title?: string
+  name?: string
+  original_name?: string
+  backdrop_path?: string
+  overview?: string
+}
 
 export const Banner = () => {
-  
-  const [movie, setMovie] = useState<movieProps>({});
+  const [movie, setMovie] = useState<movieProps>({})
+
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(ENDPOINTS.fetchNetflixOriginals);
-      console.log(request.data.result);
+    const fetchData = async () => {
+      const request = await axios.get(ENDPOINTS.fetchNetflixOriginals)
 
       //apiからランダムで値を取得している
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
         ]
-      );
-      return request;
+      )
+      return request
     }
-    fetchData();
-  }, []);
-  console.log(movie);
 
-  // descriptionの切り捨てよう関数
-  function truncate(str: any, n: number) {
-    // undefinedを弾く
-    if (str !== undefined) {
-      return str.length > n ? str?.substr(0, n - 1) + "..." : str;
+    fetchData()
+  }, [])
+  console.log(movie)
+
+  // descriptionの切り捨て関数
+  const truncate = (str: any, n: number) => {
+    if (!!str) {
+      return str.length > n ? str.substr(0, n - 1) + "..." : str
     }
   }
 
@@ -50,7 +49,7 @@ export const Banner = () => {
     >
       <div className="Banner-contents">
         <h1 className="banner-title">
-          {movie?.title || movie?.name || movie?.orignal_name}
+          {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="Banner-buttons">
           <button className="Banner-button">Play</button>
@@ -62,5 +61,5 @@ export const Banner = () => {
 
       <div className="Banner-fadeBottom" />
     </header>
-  );
-};
+  )
+}

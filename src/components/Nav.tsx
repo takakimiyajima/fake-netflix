@@ -13,7 +13,7 @@ export const Nav = (props: Props) => {
       window.scrollY > 100 ? setIsVisible(true) : setIsVisible(false)
     };
 
-    /** mounted */
+    /** when mounted */
     window.addEventListener('scroll', handleIsVisible)
 
     /** when unmounted */

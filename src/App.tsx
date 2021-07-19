@@ -8,19 +8,19 @@ import { ENDPOINTS } from "./constants";
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Banner />
+      {/* <Nav />
+      <Banner /> */}
       <Row
         title="NETFLIX ORIGINALS"
-        fetchUrl={ENDPOINTS.fetchNetflixOriginals}
+        endpoint={ENDPOINTS.fetchNetflixOriginals}
         isLargeRow
       />
-      <Row title="Top Rated" fetchUrl={ENDPOINTS.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={ENDPOINTS.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={ENDPOINTS.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={ENDPOINTS.fetchHorrorMovies} />
-      <Row title="Romance Movies" fetchUrl={ENDPOINTS.fetchRomanceMovies} />
-      <Row title="DOcumentaries" fetchUrl={ENDPOINTS.fetchDocumentMovies} />
+      <Row title="Top Rated" endpoint={ENDPOINTS.fetchTopRated} />
+      <Row title="Action Movies" endpoint={ENDPOINTS.fetchActionMovies} />
+      <Row title="Comedy Movies" endpoint={ENDPOINTS.fetchComedyMovies} />
+      <Row title="Horror Movies" endpoint={ENDPOINTS.fetchHorrorMovies} />
+      <Row title="Romance Movies" endpoint={ENDPOINTS.fetchRomanceMovies} />
+      <Row title="DOcumentaries" endpoint={ENDPOINTS.fetchDocumentMovies} />
     </div>
   )
 }

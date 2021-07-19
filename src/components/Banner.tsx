@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { requests } from "./../request";
 import axios from "./../axios";
 import "./Banner.scss"
+import { ENDPOINTS } from './../constants'
 
 type movieProps = {
   title?: string;
@@ -16,7 +16,7 @@ export const Banner = () => {
   const [movie, setMovie] = useState<movieProps>({});
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
+      const request = await axios.get(ENDPOINTS.fetchNetflixOriginals);
       console.log(request.data.result);
 
       //apiからランダムで値を取得している

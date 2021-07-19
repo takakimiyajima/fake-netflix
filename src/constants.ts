@@ -9,4 +9,5 @@ export const ENDPOINTS = {
   fetchHorrorMovies: `/discover/tv?api_key=${API_KEY}&with_genres=27`,
   fetchRomanceMovies: `/discover/tv?api_key=${API_KEY}&with_genres=10749`,
   fetchDocumentMovies: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
+  fetchTrailer: `/movie/$movieId/videos?api_key=${API_KEY}`,
 } as const

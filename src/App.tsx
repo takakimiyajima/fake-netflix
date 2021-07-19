@@ -8,8 +8,8 @@ import { ENDPOINTS } from "./constants";
 function App() {
   return (
     <div className="App">
-      {/* <Nav />
-      <Banner /> */}
+      <Nav />
+      <Banner />
       <Row
         title="NETFLIX ORIGINALS"
         endpoint={ENDPOINTS.fetchNetflixOriginals}
